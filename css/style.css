@@ -1,0 +1,241 @@
+/* ==Reset CSS== */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ==Reset CSS== */
+
+* {
+  -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: hsl(273, 75%, 66%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, hsla(273, 75%, 66%,1)), to(hsla(240, 73%, 65%,1)));
+  background: -o-linear-gradient(top, hsla(273, 75%, 66%,1) 20%, hsla(240, 73%, 65%,1) 100%);
+  background: linear-gradient(180deg, hsla(273, 75%, 66%,1) 20%, hsla(240, 73%, 65%,1) 100%);
+  font-size: 12px;
+  font-family: 'Overpass', sans-serif;
+  color: hsl(238, 29%, 16%);
+  line-height: 1.5;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.wrap {
+  max-width: 960px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.box {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+      justify-content: space-between;
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 20px 50px -20px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 20px 50px -20px rgba(0,0,0,0.4);
+box-shadow: 0px 20px 50px -20px rgba(0,0,0,0.4);
+}
+
+.box ._col {
+  width: calc(100% / 2 - 15px);
+}
+
+.box ._col:last-child {
+  padding: 60px 95px 87px 0;
+}
+
+.faq_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: calc(100% * 2.2);
+  background-repeat: no-repeat;
+  background-position: left 110% top 66%;
+}
+
+.faq_img img {
+  position: absolute;
+  left: -18%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  width: 105%;
+}
+
+.faq_img::before {
+  position: absolute;
+  background-image: url(../images/illustration-box-desktop.svg);
+}
+
+.faq_block {
+  padding: 17px 15px 17px 0;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.blk_q {
+  position: relative;
+  padding-right: 12px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.blk_q::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: 2px;
+  right: 0;
+  position: absolute;
+  background-image: url(../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.blk_q:hover {
+  color: hsl(14, 88%, 65%);
+  cursor: pointer;
+}
+
+.blk_a {
+  display: none;
+}
+
+.faq_block.active .blk_q {
+  font-weight: bold;
+}
+
+.faq_block.active .blk_q::after {
+  -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+
+.faq_block.active .blk_a {
+  display: block;
+  padding: 10px 10px 0 0;
+  color: hsl(240, 6%, 50%);
+}
+
+.pc_only {
+  display: block;
+}
+.sp_only {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrap {
+    padding: 0 24px;
+  }
+  .box {
+    overflow: visible;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+        flex-direction: column;
+    border-radius: 20px;
+  }
+  .box ._col {
+    width: 100%;
+  }
+  .box ._col:last-child {
+    margin: 100px 0 45px;
+    padding: 0 24px;
+  }
+  h1 {
+    text-align: center;
+  }
+  .faq_block {
+    padding-right: 0;
+  }
+  .faq_img {
+    width: 240px;
+    height: 104px;
+    top: 50%;
+    left: 50%;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transform: translate(-50%, 0%);
+      -ms-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+  }
+  .faq_img img {
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    -webkit-transform: translate(-50%, -90%);
+      -ms-transform: translate(-50%, -90%);
+        transform: translate(-50%, -90%);
+  }
+  .blk_q {
+    padding: 0;
+    font-size: 13px;
+  }
+  .blk_a {
+    font-size: 12px;
+  }
+
+  .pc_only {
+    display: none;
+  }
+  .sp_only {
+    display: block;
+  }
+}
